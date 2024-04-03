@@ -14,11 +14,12 @@
       {% if slots %}
       {%for i in slots%} 
         {%if i.is_available == 'available'%}
-          <button type="button" class="btn btn-outline-success ms-4 mb-3 ">{{i.starttime|time:"H:i"}}</button>
+          <button type="submit" class="btn btn-outline-success ms-4 mb-3 " name="timeslots" value="{{i.starttime|time:"H:i"}}">{{i.starttime|time:"H:i"}}</button>
+          <!-- <a href="" class="btn btn-outline-success ms-4 mb-3 ">{{i.starttime|time:"H:i"}}></a> -->
         {%elif i.is_available == 'booked' %}
-          <button type="button" class="btn btn-danger ms-4 mb-3" disabled>{{i.starttime|time:"H:i"}}</button>
+          <button type="submit" class="btn btn-danger ms-4 mb-3" disabled>{{i.starttime|time:"H:i"}}</button>
         {%elif i.is_available == 'disabled'%}
-          <button type="button" class="btn btn-secondary ms-4 mb-3" disabled>{{i.starttime|time:"H:i"}}</button>
+          <button type="submit" class="btn btn-secondary ms-4 mb-3" disabled>{{i.starttime|time:"H:i"}}</button>
         {%endif%} 
       {%endfor%} 
   </form>

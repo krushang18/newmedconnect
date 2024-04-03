@@ -153,7 +153,7 @@ def registration_pat(request):
             date_of_birth = dob,
             blood_group = bloodgroup,
             patient_addr_id = addrcreate.id,
-            profile_img=profile_img
+            profile_img=profile_img,
         )
         # print('here')
         pat_create.save()
