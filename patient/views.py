@@ -284,3 +284,18 @@ def view_bill(request,id):
         'patient':patient,
         'address':address,"bill":bills}
     return render(request,"patient/view_bill.html",context)
+
+def delete_account(request):
+    cuser=request.user
+    if request.method=="POST":
+        cuser.delete()
+        return redirect('/patient/register/')
+    
+    patient=Patient.objects.get(user_id=cuser.id)
+    address=Address.objects.get(id=patient.patient_addr_id)
+    context={
+        'user':cuser,
+        'patient':patient,
+        'address':address
+        }
+    return render(request,"patient/delete_account.html",context)
