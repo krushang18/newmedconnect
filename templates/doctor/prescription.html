@@ -1,0 +1,168 @@
+{% extends "basic_structure.html"%}
+
+{%block start%}
+<div class="container mt-3">
+  <div class="d-flex justify-content-center p-4 ">
+    <h2>Generate Prescription</h2>
+  </div>
+</div>
+<hr>
+        <!-- <div class="container" >
+          <form class="form-horizontal" method="post">
+              {% csrf_token %}
+
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="patient_Name">Name:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="patient_Name" name="patient_Name" value="{{data.patient_name}}" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="age">Age:</label>
+              <div class="col-sm-4">
+                <input type="number" class="form-control" id="age" name="age" value="0" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="gender">Gender:</label>
+              <div class="col-sm-4" id="gender">
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="rather not say"> Rather not say
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="date">Date:</label>
+                <div class="col-sm-4">          
+                  <input type="date" class="form-control" id="date" placeholder="Enter Date" name="date">
+                </div>
+              </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="duration">Dosage Duration:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="duration" placeholder="No. of days" name="duration">
+              </div>
+            </div>
+
+            <table class="table table-striped" id="myTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Medicine name</th>
+                    <th scope="col">Medichne No of times daily</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="text" class="form-control" id="med" placeholder="Medicine name" name="med_name"></td>
+                    <td><input type="text" class="form-control" id="dose" placeholder="0 - 0 - 0" name="dose"></td>
+                    <td><input type="number" class="form-control" id="qty" placeholder="0" name="qty"></td>
+                    <td><button type="button" class="btn btn-danger" onclick="removeRow(this)">Remove</button></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <button type="button" class="btn btn-info" onclick="addRow()">Add Row</button>
+              <button type="submit" class="btn btn-success">Submit</button>
+    
+          </form>
+        </div> -->
+
+
+        <div class="container mt-4">
+          <form class="row g-3" method="post">
+            {% csrf_token %}
+            
+            <div class="col-md-6">
+              <label for="patient_Name" class="form-label">Name:</label>
+              <input type="text" class="form-control" id="patient_Name" name="patient_Name" value="{{data.patient_name}}">
+            </div>
+            
+            <div class="col-md-6">
+              <label for="age" class="form-label">Age:</label>
+              <input type="number" class="form-control" id="age" name="age" value="0" required>
+            </div>
+            
+            <div class="col-md-6">
+              <label for="date" class="form-label">Date:</label>
+              <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            
+            <div class="col-md-6">
+              <label for="duration" class="form-label">Dosage Duration:</label>
+              <input type="text" class="form-control" id="duration" name="duration" placeholder="No. of days" required>
+            </div>
+            
+            <div class="col-md-6">
+              <label class="form-label">Gender:</label>
+              <div class="col-sm-6 d-flex">
+                <div class="form-check me-3">
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="male" >
+                  <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check me-3">
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                  <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="rather_not_say" value="rather not say" checked>
+                  <label class="form-check-label" for="rather_not_say">Rather not say</label>
+                </div>
+              </div>
+            </div>
+            
+
+            <hr>
+            <div class="col-md-12">
+              <table class="table table-striped" id="myTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Medicine name</th>
+                    <th scope="col">Medicine No of times daily</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="text" class="form-control" id="med" name="med_name" placeholder="Medicine name"></td>
+                    <td><input type="text" class="form-control" id="dose" name="dose" placeholder="0 - 0 - 0"></td>
+                    <td><input type="number" class="form-control" id="qty" name="qty" placeholder="0"></td>
+                    <td><button type="button" class="btn btn-outline-danger" onclick="removeRow(this)">Remove</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+              
+            <div class="col-6">
+              <button type="button" class="btn btn-outline-primary" onclick="addRow()">Add Row</button>
+            </div>
+            
+            <div class="col-6 text-end">
+              <button type="submit" class="btn btn-outline-success">Submit</button>
+            </div>
+          </form>
+        </div>
+        <br>
+        <script>
+          function addRow() {
+            var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            cell1.innerHTML = '<input type="text" class="form-control" id="med" placeholder="Medicine name" name="med_name">';
+            cell2.innerHTML = '<input type="text" class="form-control" id="dose" placeholder="0 - 0 - 0" name="dose">';
+            cell3.innerHTML = '<input type="number" class="form-control" id="qty" placeholder="0" name="qty">';
+            cell4.innerHTML = '<button type="button" class="btn btn-outline-danger" onclick="removeRow(this)">Remove</button>';
+          }
+        
+          function removeRow(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+          }
+        </script>
+        
+{%endblock%}

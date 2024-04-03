@@ -1,0 +1,27 @@
+{% extends "basic_structure.html"%} 
+{%block start%} 
+
+<div class="container mt-5">
+  <h2>Appointment Requests</h2>
+  <!-- Sample appointment request card -->
+  <div class="card mt-3">
+    <div class="card-body">
+      <h5 class="card-title">Patient: {{ disp.patient_name}}</h5>
+      <p class="card-text">Date/Time: {{ disp.datetime}}</p>
+      <p class="card-text">
+        Description: {{ disp.note}}
+      </p>
+      <form method="post">
+        {% csrf_token %}
+        <input type="radio" name="status" value="Accepted"> Accept
+        <input type="radio" name="status" value="Rejected"> Reject
+
+        <button type="submit">Submit</button>
+        <hr />
+        </form>
+      </form>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,52 @@
+{%extends 'patient/myaccount_base.html'%}
+{%block main%}
+      <div class="col-md-7 col-lg-8 col-xl-8">
+        <form style="font-size:medium; " class="col-9 mx-auto card p-3 shadow"  method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div >
+            <label  class="form-label"> First Name</label>
+            <input type="text" class="form-control" name="first_name" value="{{user.first_name}}">
+          </div>
+          <div >
+              <label class="form-label"> Last Name</label>
+              <input type="text" class="form-control" name="last_name" value="{{user.last_name}}">
+          </div>
+          <div >
+              <label class="form-label">Phone Number</label>
+              <input type="text" class="form-control" name="phone_number" value="{{user.phone_number}}">
+          </div>
+          <div >
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" name="email" value="{{user.email}}" disabled>
+        </div>
+          <div>
+              <label class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" name="dob" value="{{patient.date_of_birth}}">
+            </div>
+            <div>
+              <label class="form-label">Street</label>
+              <input type="text" class="form-control" name="street" value="{{address.street}}">
+            </div>
+            <div>
+              <label  class="form-label">City</label>
+              <input type="text" class="form-control" name="city" value="{{address.city}}">
+            </div>
+            <div>
+              <label  class="form-label">State</label>
+              <input type="text" class="form-control" name="state" value="{{address.state}}">
+            </div>
+            <div>
+              <label  class="form-label">Blood Group</label>
+              <input type="text" class="form-control" name="blood_group" value="{{patient.blood_group}}">
+            </div>
+          <div>
+            <label class="form-label">Profile Picture</label>
+            <input type="file" class="form-control" name="profile" value="{{patient.profile_img}}">
+        </div>
+         <center> <button type="submit" class="btn btn-primary btn-lg">Update</button></center>
+        </form>
+      </div>
+    </div>
+</div>
+</div>
+{% endblock %}

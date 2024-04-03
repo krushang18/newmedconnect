@@ -1,0 +1,77 @@
+{% extends "basic_structure.html"%}
+{%block start%}
+
+<br><br>
+
+  <div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body d-flex align-items-center">
+                    <img src="/media/doctors/schedule.png" class="img-fluid rounded-start me-3" alt="Placeholder Image">
+                    <div>
+                        <h5 class="card-title">Schedule</h5>
+                        <p class="card-text">Generate time slot for your patients and disable slots if busy. Also check your schedule </p>
+                        <a href="/doctor/schedule/" class="btn btn-outline-primary">View Schedule</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body d-flex align-items-center">
+                    <img src="/media/doctors/pending.png" class="img-fluid rounded-start me-3" alt="Placeholder Image">
+                    <div>
+                        <h5 class="card-title">Pending Requests</h5>
+                        <p class="card-text">View requests recieved for booking appointment and respond.</p>
+                        <a href="/doctor/received-request/" class="btn btn-outline-primary">Pending Requests</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body d-flex align-items-center">
+                    <img src="/media/doctors/appointment.png" class="img-fluid rounded-start me-3" alt="Placeholder Image">
+                    <div>
+                        <h5 class="card-title">Appointments</h5>
+                        <p class="card-text">View booked appointments and also generate bill and prescription for patients</p>
+                        <a href="/doctor/appointments/" class="btn btn-outline-primary">Appointments</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-body d-flex align-items-center">
+                    <img src="/media/doctors/history.png" class="img-fluid rounded-start me-3" alt="Placeholder Image">
+                    <div>
+                        <h5 class="card-title">History</h5>
+                        <p class="card-text">View completed appointment with their bill and prescription generated.</p>
+                        <a href="/doctor/history/ " class="btn btn-outline-primary">View History</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-body d-flex align-items-center">
+                    <img src="/media/doctors/doc-profile.png" class="img-fluid rounded-start me-3" alt="Placeholder Image">
+                    <div>
+                        <h5 class="card-title">Profile</h5>
+                        <p class="card-text">View and also update your profile if required</p>
+                        <a href="/doctor/doctors-profile/" class="btn btn-outline-primary">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

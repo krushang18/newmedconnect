@@ -1,0 +1,45 @@
+{% extends "basic_structure.html"%}
+{%block start%}
+
+<div class="container mt-5">
+  <form class="col-6 mx-auto card p-3 shadow-lg" method="post">
+  {% csrf_token %}
+  <h4>View Timeslots</h4><hr>
+    <div class="form-group" >
+      <label for="selecteddate">Select Date to view slots:</label>
+      <input type="date" name ="selecteddate" class="form-control" id="selecteddate" value="{{ uniquedate |date:"d-m-Y"}}" required>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-outline-primary">find</button><br><rr>
+  </form>
+</div>
+<hr>
+
+{% if slot %}
+
+<div class="container mt-3">
+  <div class="container p-1">
+    <div class="d-flex justify-content-center p-2 mb-1">
+      <p>Click On the Time slot which you would like to Enable/Disable</p>
+    </div>
+  </div>
+{%for i in slot%}
+  {%if i.is_available == 'available'%}
+    <a href="/doctor/updateslot/{{i.id}}" class="btn btn-outline-success ms-4 mb-3" name="timeslots" >{{i.starttime|time:"H:i"}} </a>
+  {%elif i.is_available == 'booked' %}
+    <input type="button" class="btn btn-outline-danger ms-4 mb-3" disabled value="{{i.starttime |time:"H:i"}}">
+  {%elif i.is_available == 'disabled'%}
+    <a href="/doctor/updateslot/{{i.id}}" class="btn btn-secondary ms-4 mb-3" name="timeslots">{{i.starttime|time:"H:i"}} </a>
+  {%endif%}
+{%endfor%}
+</div>
+
+{% else %}
+<div class="container mt-1">
+  <div class="d-flex justify-content-center p-4 mb-2">
+    <h4>No Slots Generated</h4>
+  </div>
+</div>
+{% endif %}
+
+{%endblock%}

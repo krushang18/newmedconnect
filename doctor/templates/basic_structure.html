@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ht integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>{{page}}</title>
+
+    <style>
+      .card{
+          margin: 2%;
+          border: 2px solid;
+      }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+            <img src="sample.jpg" alt="logo" style="width:40px;">
+    </a>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">MedConnect</a>
+      </div>
+      <a class="navbar-brand" href="login.html">Logout</a>
+    </div>
+  </nav>
+    {% block start%}
+
+    {% endblock %}
+</body>
+</html>

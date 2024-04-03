@@ -1,0 +1,104 @@
+{% extends "basic_structure.html"%}
+
+{%block start%}
+
+<div class="container mt-1">
+  <div class="d-flex justify-content-center pt-5 p-1">
+    <h2>Your Profile</h2>
+  </div>
+</div>
+<hr>
+
+
+
+      <section style="background-color: #ffffff;">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card mb-4">
+                <div class="card-body text-center">
+      
+                  <!-- Profile Image -->
+                  <img src="/media/{{ doc.profile_img }}" alt="avatar" class="rounded-circle " style="width: 150px; height: 150px; object-fit: cover;">
+                  
+                  <!-- Doctor Name and Specialization -->
+                  <h5 class="my-3">Dr. {{cuser.first_name}}</h5>
+                  <p class="text-muted mb-1">{{doc.qualification}}</p>
+                  
+                  <!-- Description -->
+                  <p class="text-muted mb-3">{{doc.specialization}}</p>
+      
+                  <!-- Update Profile Button -->
+                  <div class="d-flex justify-content-center mb-2">
+                    <a href="/doctor/doctors-profile-update/{{request.user.id}}/" class="btn btn-primary">Update Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <!-- Full Name -->
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <label for="name" class="form-label">Full Name</label>
+                    </div>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="name" placeholder="Full Name" name="name" value="{{cuser.first_name}} {{cuser.last_name}}">
+                    </div>
+                  </div>
+                  <!-- Email -->
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <label for="email" class="form-label">Email</label>
+                    </div>
+                    <div class="col-sm-9">
+                      <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" value="{{cuser.email}}">
+                    </div>
+                  </div>
+
+                  <!-- Mobile -->
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <label for="phone" class="form-label">Mobile</label>
+                    </div>
+                    <div class="col-sm-9">
+                      <input type="number" class="form-control" id="phone" placeholder="Contact No" name="phone" value="{{cuser.phone_number}}">
+                    </div>
+                  </div>
+                  <!-- Address -->
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <label for="address" class="form-label">Address</label>
+                    </div>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="address" placeholder="Address" name="address" value="{{doc.doctor_addr.street}}">
+                    </div>
+                  </div>
+                  <!--Certi  -->
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <label for="certi" class="form-label">Certificate No.</label>
+                    </div>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="certi" placeholder="certi" name="certi" value="{{doc.certificate_no}}">
+                    </div>
+                  </div>
+                  <!-- Description -->
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <label for="fees" class="form-label">Fees Per Session</label>
+                    </div>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="fees" placeholder="fees" name="fees" value="{{doc.fees}}">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+{%endblock%}

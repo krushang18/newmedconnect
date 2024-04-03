@@ -1,0 +1,29 @@
+{% extends "log_reg_base.html"%}
+
+{% block start%}
+
+<div class="container mt-5" style="color:#000000; ">
+  <form class="col-6 mx-auto card p-3 shadow-lg" method="post">
+      {% csrf_token %}
+      <h4>Login</h4><hr>
+      {% if messages %}
+      <div class="alert alert-primary" role="alert">
+      {% for message in messages %}
+              {{ message }}              
+              {% endfor %}
+          </div>
+      {% endif %}
+      <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" class="form-control" required id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" required name="password" id="password">
+        </div>
+        <p>Don't have account? <a href="/patient/register/">Register Here</a><br>
+      <center><button type="submit" class="btn btn-lg btn-outline-success">Login</button>
+      <a href="/patient/myaccount/" class="btn btn-lg btn-outline-primary">Skip</a></center>
+    </form>
+  </div>
+{% endblock %}

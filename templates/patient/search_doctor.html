@@ -1,0 +1,42 @@
+{% extends 'patient/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<ul class="breadcrumb">
+    <li><a href="/patient/">Home</a></li>
+    <li>Search</li>
+  </ul>
+
+{%if doc is not None%}
+
+  <div class="content">
+    <div class="row">
+    {%for doc in doctor%}
+    <div class="col-xl-3" style="margin:20px;">
+      <div class="card" style="padding: 10px;">
+        <div class="doctor-img">
+          <a href="doctor-profile.html">
+            <img src="/media/images/d1.jpg" class="img-fluid" alt="User Image">
+          </a>
+        </div>
+        <div class="doc-info">
+          <h4 class="doc-name"><center>Dr. {{doc.user.first_name}}</center></h4>
+          <center><h6 class="doc-speciality"><i class="fa  fa-stethoscope"></i>{{doc.specialization}}</h6>
+          <i class="fas fa-map-marker-alt"></i> {{doc.doctor_addr.city}},{{doc.doctor_addr.state}}
+        </div></center>
+        <div class="clinic-booking">
+          <a href="/patient/doc-details/"><center><button class="btn btn-primary" style="margin: 10px;">Book Appointment</button></center></a>
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+
+    {%else%}
+      <h3> No Results Found</h3>
+  </div>
+
+  {%endif%}
+  
+
+{% endblock %}

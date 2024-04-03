@@ -1,0 +1,29 @@
+{% extends "basic_structure.html"%}
+
+{%block start%}
+        <div class="container mt-5">
+          <form class="form-horizontal col-6 mx-auto card p-3 shadow-lg" method="post">
+            <h4>Generate Timeslot</h4><hr>
+              {% csrf_token %}
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="date">Date:</label>
+                  <input type="date" class="form-control" id="date" placeholder="Enter Date" name="date" required>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="starttime">Start time:</label>
+                <input type="time" class="form-control" id="starttime" name="starttime" required>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="endtime">End time:</label>
+                <input type="time" class="form-control" id="endtime" name="endtime" required>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="duration">Duration:</label>
+                <input type="text" class="form-control" id="duration" name="duration" required>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-outline-primary">Submit</button>
+          </form>
+        </div>
+
+{%endblock%}

@@ -1,0 +1,84 @@
+{%extends 'patient/myaccount_base.html'%}
+{%block main%}
+      
+      <div class="col-md-7 col-lg-8 col-xl-9">
+        <div class="card">
+          <div class="card-body pt-0">
+          
+            <!-- Tab Menu -->
+            <nav class="user-tabs mb-4">
+              <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
+                <li class="nav-item">
+                  <a class="nav-link" href="/patient/myaccount/" data-toggle="tab">Appointments</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/patient/prescription/" data-toggle="tab">Prescriptions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/patient/bills" data-toggle="tab">Billing</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- /Tab Menu -->
+            
+            <!-- Tab Content -->
+            <div class="tab-content pt-0">
+             
+              
+              <!-- Billing Tab -->
+              <div id="pat_billing" class="tab-pane fade show active">
+                <div class="card card-table mb-0">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover table-center mb-0">
+                        <thead>
+                          <tr>
+                            <th>Doctor</th>
+                            <th>Amount</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {%for b in bill%}
+                          <tr>
+                            <td>
+                              <h2 class="table-avatar">
+                                <a href="doctor-profile.html" class="avatar avatar-sm mr-2">
+                                  <img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-07.jpg" alt="User Image">
+                                </a>
+                                <a href="doctor-profile.html">Dr. {{b.appointment_id.doctor_id.user.first_name}} {{b.appointment_id.doctor_id.user.last_name}} <span>{{b.appointment_id.doctor_id.apecialization}}</span></a>
+                              </h2>
+                            </td>
+                            <td>{{b.final_amount}}</td>
+                            <td>8 Nov 2019</td>
+                            <td class="text-right">
+                              <div class="table-action">
+                                <a href="/patient/view-bill/{{b.id}}" class="btn btn-sm bg-info-light">
+                                  <i class="far fa-eye"></i> View
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                          {%endfor%}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Billing Tab -->
+              
+            </div>
+            <!-- Tab Content -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>		
+<!-- /Page Content -->
+
+{% endblock  %}

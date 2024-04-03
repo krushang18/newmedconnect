@@ -1,0 +1,24 @@
+{% extends "patient/base.html"%}
+
+{% block content%}
+
+<div class="container mt-5">
+<form class="col-6 mx-auto card p-3 shadow-lg" method="post">
+    {% csrf_token %}
+    <h4>Request appointment</h4><hr>
+    <div class="form-group " >
+      <label for="patient_names">Patient Name</label>
+      <input type="text" name ="patient_names" required class="form-control" id="patient_names" value="{{request.user.first_name}}">
+    </div>
+    <div class="form-group">
+        <label for="illness_description">Illness Description</label>
+        <textarea name ="illness" required class="form-control" id="illness_description"></textarea>
+      </div><br> 
+      <div class="form-group">
+        <label for="selectedDate">Select a Date:</label>
+        <input type="date" id="selectedDate" required name="selectedDate">
+      </div><br>
+    <button type="submit" class="btn btn-success">Select time slot</button><br> 
+  </form>
+</div>
+{% endblock %}

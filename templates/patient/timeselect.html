@@ -1,0 +1,39 @@
+{% extends "patient/base.html"%}
+
+{%block content%}
+<div class="container mt-1">
+  <div class="d-flex justify-content-center pt-5 p-1">
+    <h2>Select Time Slot</h2>
+  </div>
+</div>
+<hr>
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="container mt-5">
+      {% if slots %}
+      {%for i in slots%} 
+        {%if i.is_available == 'available'%}
+          <button type="button" class="btn btn-outline-success ms-4 mb-3 ">{{i.starttime|time:"H:i"}}</button>
+        {%elif i.is_available == 'booked' %}
+          <button type="button" class="btn btn-danger ms-4 mb-3" disabled>{{i.starttime|time:"H:i"}}</button>
+        {%elif i.is_available == 'disabled'%}
+          <button type="button" class="btn btn-secondary ms-4 mb-3" disabled>{{i.starttime|time:"H:i"}}</button>
+        {%endif%} 
+      {%endfor%} 
+  </form>
+
+    {% else %}
+    <div class="container mt-1">
+      <div class="d-flex justify-content-center p-4 mb-2">
+        <h4>No Slots Generated</h4>
+      </div>
+    </div>
+    {% endif %}
+    
+    </div>
+
+
+
+
+{%endblock%}

@@ -1,0 +1,41 @@
+{% extends "basic_structure.html"%}
+
+{%block start%}
+
+<div class="container mt-1">
+  <div class="d-flex justify-content-center pt-5 p-2 pb-5">
+    <h2>Completed Appointments</h2>
+  </div>
+</div>
+<div class="container-fluid">
+
+    <table class="table table-striped" style="text-align: center;">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" style="text-align: left;">Patient name</th>
+            <th scope="col" style="text-align: left;">Date/time</th>
+            <th scope="col">Presctiption</th>
+            <th scope="col">Bill</th>
+
+          </tr>
+        </thead>
+        <tbody> 
+          {%for i in disp%}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td style="text-align: left;">{{i.patient_name}}</td>
+            <td style="text-align: left;">{{i.datetime}}</td>
+            <!-- <td><a href="/doctor/viewbill/{{i.id}}">View Bill</a></td> -->
+            <td><a class="btn btn-outline-primary" href="/doctor/viewprescription/{{i.id}}">View Prescription</a></td>
+            <td><a class="btn btn-outline-primary" href="/doctor/viewbill/{{i.id}}">View Bill</a></td>
+
+            <!-- <td><a href="/doctor/viewprescription/{{i.id}}">View Prescription</a></td> -->
+
+
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+</div>
+{%endblock%}

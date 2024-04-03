@@ -1,0 +1,44 @@
+{% extends "basic_structure.html"%} {%block start%}
+
+<div class="container mt-1">
+  <div class="d-flex justify-content-center pt-5 p-1">
+    <h2>Your Today's Schedule</h2>
+  </div>
+</div>
+
+<div class="container mt-5">
+{% if slots %}
+{%for i in slots%} 
+  {%if i.is_available == 'available'%}
+    <button type="button" class="btn btn-outline-success ms-4 mb-3 ">{{i.starttime|time:"H:i"}}</button>
+  {%elif i.is_available == 'booked' %}
+    <button type="button" class="btn btn-danger ms-4 mb-3" disabled>{{i.starttime|time:"H:i"}}</button>
+  {%elif i.is_available == 'disabled'%}
+    <button type="button" class="btn btn-secondary ms-4 mb-3" disabled>{{i.starttime|time:"H:i"}}</button>
+  {%endif%} 
+{%endfor%} 
+{% else %}
+<div class="container mt-1">
+  <div class="d-flex justify-content-center p-4 mb-2">
+    <h4>No Slots Generated</h4>
+  </div>
+</div>
+{% endif %}
+
+</div>
+<hr>
+<div class="container mt-1">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-center">
+          <a href="/doctor/generate-slot/" class="btn btn-outline-primary">Generate Slots</a>
+      </div>
+    </div>
+    <div class="col">
+      <div class="d-flex justify-content-center">
+        <a href="/doctor/viewtimeslot/" class="btn btn-outline-primary">view timeslots</a>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

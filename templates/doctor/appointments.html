@@ -1,0 +1,96 @@
+{% extends "basic_structure.html"%} 
+{%block start%} 
+
+
+<div class="container mt-1">
+    <div class="d-flex justify-content-center pt-5 p-2 pb-5">
+      <h2>Completed Appointments</h2>
+    </div>
+  </div>
+  <div class="container-fluid">
+  
+      <table class="table table-striped" style="text-align: center;">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" style="text-align: left;">Patient Name</th>
+              <th scope="col" style="text-align: left;">Illness Description</th>
+              <th scope="col" style="text-align: left;">Date/Time</th>
+              <th scope="col">Prescription</th>
+              <th scope="col">Bill</th>
+              <th scope="col">Completed?</th>
+  
+            </tr>
+          </thead>
+          <tbody> 
+            {%for i in disp%}
+            <tr>
+              <th scope="row">{{forloop.counter}}</th>
+              <td style="text-align: left;">{{i.patient_name}}</td>
+              <td style="text-align: left;">{{i.note}}</td>
+              <td style="text-align: left;">{{i.datetime}}</td>
+              <td><a href="/doctor/generate-precription/{{i.id}}/" class="btn btn-outline-primary m-2">Prescription</a></td>
+              <td><a href="/doctor/generate-bill/{{i.id}}/" class="btn btn-outline-primary m-2">Bill</a></td>
+              <td><a href="/doctor/completed/{{i.id}}/" class="btn btn-outline-success m-2">Complete</a></td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Counter</th>
+            <th>Patient Name</th>
+            <th>Illness Description</th>
+            <th>Date/Time</th>
+            <th>Bill</th>
+            <th>Prescription</th>
+            <th>Completed?</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+
+
+
+
+{% for i in disp %}
+<tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{i.patient_name}}</td>
+    <td>{{i.note}}</td>
+    <td>{{i.datetime}}</td>
+    <td><a href="/doctor/generate-bill/{{i.id}}/" class="btn btn-primary m-2">Bill</a></td>
+    <td><a href="/doctor/generate-precription/{{i.id}}/" class="btn btn-warning m-2">Prescription</a></td>
+    <td><a href="/doctor/completed/{{i.id}}/" class="btn btn-success m-2">Complete</a></td>
+
+</tr>
+{% endfor %} 
+</tbody>
+</table> -->
+
+
+{%endblock%}

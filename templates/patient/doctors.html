@@ -1,0 +1,30 @@
+{% extends 'patient/base.html' %}
+{% load static  %}
+
+{% block content %}
+
+<ul class="breadcrumb">
+    <li><a href="/patient/">Home</a></li>
+    <li>Doctors</li>
+  </ul>
+<div class="content">
+  <div class="row">
+  {%for doc in doctor%}
+  <div class="col-xl-3" style="margin:20px;">
+    <div class="card" style="padding: 10px;">
+      <div class="doctor-img">
+          <img src="/media/{{doc.profile_img}}" class="img-fluid" alt="User Image">
+      </div>
+      <div class="doc-info">
+        <h4 class="doc-name"><center>Dr. {{doc.user.first_name}}  {{doc.user.last_name}}</center></h4>
+        <center><h6 class="doc-speciality"><i class="fa  fa-stethoscope"></i>{{doc.specialization}}</h6>
+      </div></center>
+      <div class="clinic-booking">
+        <a href="/patient/doc-details/{{doc.user.id}}"><center><button class="btn btn-primary" style="margin: 10px;">View Details</button></center></a>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+</div>  
+{% endblock %}

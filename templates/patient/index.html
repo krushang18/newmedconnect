@@ -1,0 +1,70 @@
+{% extends 'patient/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/media/images/slide1.jpg" alt="Los Angeles" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="/media/images/slide2.jpg" alt="Chicago" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="/media/images/slide3.jpg" alt="New York" class="d-block w-100">
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+  <div id="advantages" class="row"><!-- advantages Starts -->
+    <div class="container"><!-- container Starts -->
+      <div class="same-height-row"><!-- same-height-row Starts -->
+        <div class="col-sm-4"><!-- col-sm-4 Starts -->
+          <div class="box same-height"><!-- box same-height Starts -->
+            <b><h3>Our Doctors</h3></b>
+            <p>
+              Well qualified and certified doctors are available here.
+            </p>
+          </div><!-- box same-height Ends -->
+        </div><!-- col-sm-4 Ends -->
+        <div class="col-sm-4"><!-- col-sm-4 Starts -->
+          <div class="box same-height"><!-- box same-height Starts -->
+            <b><h3>Online Appointments</h3></b>
+            <p>
+              Appoinments of doctors are managed online.
+            </p>
+          </div><!-- box same-height Ends -->
+        </div><!-- col-sm-4 Ends -->
+        <div class="col-sm-4"><!-- col-sm-4 Starts -->
+          <div class="box same-height"><!-- box same-height Starts -->
+            <b><h3>Prescription and Bills</h3></b>
+            <p>
+              Patients have you prescription and bills preserved online.
+            </p>
+          </div><!-- box same-height Ends -->
+        </div><!-- col-sm-4 Ends -->
+      </div><!-- same-height-row Ends -->
+    </div><!-- container Ends -->
+  </div><!-- advantages Ends --> 
+
+
+
+
+{% endblock %}

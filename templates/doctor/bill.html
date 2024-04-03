@@ -1,0 +1,122 @@
+{% extends "basic_structure.html"%}
+
+{%block start%}
+<div class="container mt-3">
+  <div class="d-flex justify-content-center p-4 ">
+    <h2>Generate Bill</h2>
+  </div>
+</div>
+<hr>
+
+<div class="container mt-4 pb-3">
+  <form class="row g-3" method="post">
+              {% csrf_token %}
+
+              <div class="col-md-6">
+                <label for="patient_Name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="patient_Name" name="patient_Name" value="{{pres.appointment_id.patient_name}}" required>
+              </div>
+              <div class="col-md-6">
+                <label for="date" class="form-label">Date:</label>
+                <input type="date" class="form-control" id="patient_Name" id="date" placeholder="Enter Date" name="date" required>
+              </div>
+
+
+
+            <!-- <div class="form-group">
+              <label class="control-label col-sm-2" for="patient_Name">Name:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="patient_Name" name="patient_Name" value="{{pres.appointment_id.patient_name}}" >
+              </div>
+            </div> -->
+
+            <!-- <div class="form-group">
+                <label class="control-label col-sm-2" for="date">Date:</label>
+                <div class="col-sm-4">          
+                  <input type="date" class="form-control" id="date" placeholder="Enter Date" name="date">
+                </div>
+              </div> -->
+<hr>
+
+<div class="col-md-12">
+
+            <table class="table table-striped" id="myTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Medicine name</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="text" class="form-control" id="med" name="med_name" value="Consultancy fees"></td>
+                    <td><input type="number" class="form-control" id="qty" placeholder="0" name="qty" value="1"></td>
+                    <td><input type="number" class="form-control" id="rate" placeholder="0" name="rate" value="{{pres.appointment_id.doctor_id.fees}}"></td>
+
+                    <td><button type="button" class="btn btn-danger" onclick="removeRow(this)">Remove</button></td>
+                  </tr>
+                  {%for i in presmed%}
+                  <tr>
+                    <td><input type="text" class="form-control" id="med" name="med_name" value="{{i.medicine_id.medicine_name}}"></td>
+                    <td><input type="number" class="form-control" id="qty" placeholder="0" name="qty" value="{{i.quantity}}"></td>
+                    <td><input type="number" class="form-control" id="rate" placeholder="0" name="rate" value="{{i.medicine_id.price}}"></td>
+                    <td><button type="button" class="btn btn-danger" onclick="removeRow(this)">Remove</button></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+</div>
+<div class="col-12">
+<div class="col-md-4 ">
+  <label for="discount" class="form-label">Discount:</label>
+  <input type="number" class="form-control" id="discount" id="discount" placeholder="0" name="discount" required>
+</div>
+</div>
+              <!-- <div class="form-group">
+                <label class="control-label col-sm-2" for="date">Discount</label>
+                <div class="col-sm-4">          
+                  <input type="number" class="form-control" id="discount" placeholder="0" name="discount">
+                </div>
+              </div> -->
+
+              <div class="col-6">
+                <button type="button" class="btn btn-outline-primary" onclick="addRow()">Add Row</button>
+              </div>
+              
+              <div class="col-6 text-end">
+                <button type="submit" class="btn btn-outline-success">Submit</button>
+              </div>
+
+              <!-- <button type="button" class="btn btn-info" onclick="addRow()">Add Row</button>
+              <button type="submit" class="btn btn-success">Submit</button> -->
+    
+          </form>
+        </div>
+        
+    </body>
+
+
+    <script>
+      function addRow() {
+          var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+          var cell4 = newRow.insertCell(3);
+          cell1.innerHTML = '<input type="text" class="form-control" id="med" placeholder="Medicine name" name="med_name">';
+          cell2.innerHTML = '<input type="number" class="form-control" id="qty" placeholder="0" name="qty">';
+          cell3.innerHTML = '<input type="number" class="form-control" id="rate" placeholder="0" name="rate">';
+          cell4.innerHTML = '<button type="button" class="btn btn-danger" onclick="removeRow(this)">Remove</button>';
+      }
+  
+      function removeRow(button) {
+          var row = button.parentNode.parentNode;
+          row.parentNode.removeChild(row);
+      }
+  </script>
+
+  
+{%endblock%}

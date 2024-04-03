@@ -1,0 +1,746 @@
+body {
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+.navbar {
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:14px;
+    color: #0041C2;
+    padding-bottom: -10px;
+}
+
+.navbar .collapse{
+    margin-left: 400px;
+}
+
+.navbar .nav-link{
+    margin:10px 10px 10px 10px;
+}
+
+.navbar .d-flex{
+    margin-left: 20px;
+    margin-top:10px;
+    margin-bottom: 20px;
+}
+
+.navbar .d-flex .btn .btn-primary
+{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.navbar .container-fluid .collapse li:hover{
+    background-color: lightblue;
+}
+
+
+#carousel{
+    margin: 2%;
+    height: 100;
+}
+  
+.carousel-inner{
+    border-radius: 20px; 
+    align-items: center;
+}
+  
+.carousel-control-prev-icon:hover{
+    color: black;
+}
+
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+  
+  /* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+  
+  /* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+  
+  /* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+  
+  /* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+.dash-widget {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.circle-bar {
+    margin-right: 15px;
+}
+.dct-border-rht {
+	border-right: 1px solid #f0f0f0;
+}
+.dash-widget h6 {
+    font-size: 16px;
+    font-weight: 400;
+}
+.dash-widget h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.dash-widget p {
+	color: #757575;
+    font-size: 14px;
+	margin-bottom: 0;
+}
+.circle-bar > div {
+	display: inline-block;
+	position: relative;
+	text-align: center;
+}
+.circle-bar > div img {
+    left: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+    transform: translateY(-50%);
+}
+.circle-bar > div canvas {
+	width: 90px !important;
+	height: 90px !important;
+}
+.dash-card .row {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.dash-card .row > div {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.appointment-tab {
+	margin-bottom: 30px;
+}
+.appointment-tab .nav-tabs {
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 1px solid #f0f0f0;
+    border-radius: .25rem 0.25rem 0 0 !important;
+	border-bottom: 0;
+}
+.appointment-tab .tab-content {
+	padding-top: 0;
+}
+.appointment-tab .card {
+	border-radius: 0;
+}
+.submit-btn-bottom {
+	margin-bottom: 30px;
+}
+
+
+.add-new-btn {
+    background-color: #0de0fe;
+    border-radius: 30px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}
+.add-new-btn:focus, .add-new-btn:hover,.add-new-btn:active {
+	background-color: #0de0fe;
+    color: #fff;
+}
+.patient-info {
+	margin-top: 15px;
+}
+.patient-info ul {
+    padding: 0;
+    list-style: none;
+	font-size: .875rem;
+	margin: 0;
+}
+.patient-info ul li {
+    position: relative;
+    font-size: .875rem;
+    font-weight: 500;
+    color: #272b41;
+    text-transform: capitalize;
+}
+.patient-info ul li + li {
+	margin-top: 15px;
+}
+.patient-info ul li i {
+	width: 18px;
+}
+.patient-info ul li span {
+    color: #757575;
+    float: right;
+    font-weight: 400;
+}
+
+/*-----------------
+	25. Add Billing
+-----------------------*/
+
+.biller-info, .billing-info {
+	margin-bottom: 15px;
+}
+.add-more-item {
+	margin-bottom: 10px;
+}
+.add-more-item a {
+	color: #0de0fe;
+	font-weight: 500;
+}
+
+.pat-widget-profile .pro-widget-content {
+	padding: 0 0 20px;
+}
+.pat-widget-profile .booking-date li {
+	font-size: .875rem;
+}
+.pat-widget-profile .booking-date li span {
+    font-size: .875rem;
+}
+
+.table {
+	color: #272b41;
+	max-width: 100%;
+	margin-bottom: 0;
+	width: 100%;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+	background-color: #f8f9fa;
+}
+.table.no-border > tbody > tr > td,
+.table > tbody > tr > th,
+.table.no-border > tfoot > tr > td,
+.table.no-border > tfoot > tr > th,
+.table.no-border > thead > tr > td,
+.table.no-border > thead > tr > th {
+	border-top: 0;
+	padding: 10px 8px;
+}
+.table-nowrap td,
+.table-nowrap th {
+	white-space: nowrap
+}
+.table.dataTable {
+	border-collapse: collapse !important;
+}
+table.table td h2 {
+	display: inline-block;
+	font-size: inherit;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+table.table td h2.table-avatar {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+    font-size: inherit;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+	white-space: nowrap;
+}
+table.table td h2 a {
+	color: #272b41;
+}
+table.table td h2 a:hover {
+	color: #09dca4;
+}
+table.table td h2 span {
+	color: #888;
+	display: block;
+	font-size: 12px;
+	margin-top: 3px;
+}
+.table thead {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+.table thead tr th {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.table tbody tr {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.table tbody tr:last-child {
+	border-color: transparent;
+}
+.table.table-center td,
+.table.table-center th {
+	vertical-align: middle;
+}
+.table-hover tbody tr:hover {
+	background-color: #f7f7f7;
+}
+.table-hover tbody tr:hover td {
+	color: #474648;
+}
+.table-striped thead tr {
+	border-color: transparent;
+}
+.table-striped tbody tr {
+	border-color: transparent;
+}
+.table-striped tbody tr:nth-of-type(even) {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: rgba(235, 235, 235, 0.4);
+}
+.table-bordered {
+	border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+.table-bordered th,
+.table-bordered td {
+	border-color: rgba(0, 0, 0, 0.05);
+}
+.card-table .card-body {
+    padding: 0;
+}
+.card-table .card-body .table > thead > tr > th {
+    border-top: 0;
+}
+.card-table .table tr td:first-child,
+.card-table .table tr th:first-child {
+    padding-left: 1.5rem;
+}
+.card-table .table tr td:last-child,
+.card-table .table tr th:last-child {
+    padding-right: 1.5rem;
+}
+.card-table .table td, .card-table .table th {
+    border-top: 1px solid #e2e5e8;
+    padding: 1rem 0.75rem;
+    white-space: nowrap;
+}
+
+.widget-profile {
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+.widget-profile .profile-info-widget {
+	display: block;
+	text-align: center;
+}
+.widget-profile .profile-info-widget .booking-doc-img {
+    display: inline-block;
+    margin: 0 0 15px;
+    width: auto;
+    padding: 8px;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+}
+.widget-profile .profile-info-widget .booking-doc-img img {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+}
+.appointment-list .profile-info-widget {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    margin-right: auto;
+    text-align: left;
+}
+.appointment-list .profile-info-widget .booking-doc-img img {
+    border-radius: 4px;
+    height: 120px;
+    object-fit: cover;
+    width: 120px;
+}
+.appointments .appointment-list {
+	background-color: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+	margin-bottom: 20px;
+    padding: 20px;
+}
+.appointments .appointment-list:last-child {
+	margin-bottom: 30px;
+}
+.appointments .appointment-action {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+.appointment-action a + a {
+	margin-left: 5px;
+}
+.appointment-action a {
+    font-size: 13px;
+}
+.info-details {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.info-details li .title {
+    color: #272b41;
+    font-weight: 500;
+}
+.info-details li .text {
+    color: #757575;
+    display: block;
+    font-size: 16px;
+    overflow: hidden;
+}
+.info-details li {
+	margin-bottom: 10px;
+}
+.info-details li:last-child {
+	margin-bottom: 0;
+}
+
+.appointment-list .profile-info-widget {
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.appointment-list .profile-info-widget {
+    text-align: center;
+}
+.appointment-list .profile-info-widget .booking-doc-img {
+    margin: 0 0 15px;
+}
+.appointment-list .profile-info-widget .booking-doc-img img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+.widget-profile.pat-widget-profile .profile-info-widget .booking-doc-img {
+	padding: 0;
+}
+.widget-profile.pat-widget-profile .profile-info-widget .booking-doc-img img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+.dashboard-menu ul {
+    color: #757575;
+    font-size: 14px;
+    line-height: 17px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+}
+.dashboard-menu ul li {
+	line-height: inherit;
+}
+.dashboard-menu > ul > li {
+	border-bottom:1px solid #f0f0f0;
+	position: relative;
+}
+.dashboard-menu > ul > li:last-child {
+	border-bottom: 0;
+}
+.dashboard-menu ul li a span,
+.dashboard-menu ul li a i {
+	display: inline-block;
+	vertical-align: middle;
+}
+.dashboard-menu > ul > li > a {
+	color: #757575;
+	display: block;
+	padding: 16px 20px;
+}
+.dashboard-menu > ul > li:hover > a,
+.dashboard-menu > ul > li.active > a {
+	color:#0de0fe;
+}
+.dashboard-menu ul li a i {
+    font-size: 16px;
+    margin-right: 10px;
+    width: 16px;
+}
+
+.box {
+    background: #fff;
+    margin: 0 0 30px;
+    border: solid 1px #e6e6e6;
+    box-sizing: border-box;
+    padding:20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+    
+#advantages {
+    text-align:center;
+}
+
+#advantages .box{
+    background-color: #233b6d;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 10px;
+}
+
+#advantages .box:hover{
+    background-color: #09dca4;
+}
+    
+#advantages .box h3 {
+    position:relative;
+    margin: 0 0 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    z-index:2;
+    text-decoration: none;
+    color: white;
+}
+    
+#advantages .same-height-row{
+    display: flex;
+}   
+
+#advantages .box p{
+    position:relative;
+    color: #f0f0f0;
+    z-index:2;
+    margin: 20px;
+}
+
+.nav-tabs {
+	border-bottom: 1px solid #f0f0f0;
+}
+.card-header-tabs {
+    border-bottom: 0;
+}
+.nav-tabs > li > a {
+	margin-right: 0;
+	color: #888;
+	border-radius: 0;
+}
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+	border-color: transparent;
+	color: #272b41;
+}
+.nav-tabs.nav-tabs-solid > li > a {
+	color: #272b41;
+}
+.nav-tabs.nav-tabs-solid > .active > a,
+.nav-tabs.nav-tabs-solid > .active > a:hover,
+.nav-tabs.nav-tabs-solid > .active > a:focus {
+	background-color: #20c0f3;
+	border-color: #20c0f3;
+	color: #fff;
+}
+.tab-content {
+	padding-top: 20px;
+}
+.nav-tabs .nav-link {
+	border-radius: 0;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    background-color: #eee;
+    border-color: transparent;
+	color: #272b41;
+}
+.nav-tabs.nav-justified > li > a {
+	border-radius: 0;
+	margin-bottom: 0;
+}
+.nav-tabs.nav-justified > li > a:hover,
+.nav-tabs.nav-justified > li > a:focus {
+	border-bottom-color: #ddd;
+}
+.nav-tabs.nav-justified.nav-tabs-solid > li > a {
+	border-color: transparent;
+}
+.nav-tabs.nav-tabs-solid > li > a {
+	color: #272b41;
+}
+.nav-tabs.nav-tabs-solid > li > a.active,
+.nav-tabs.nav-tabs-solid > li > a.active:hover,
+.nav-tabs.nav-tabs-solid > li > a.active:focus {
+	background-color: #20c0f3;
+	border-color: #20c0f3;
+	color: #fff;
+}
+.nav-tabs.nav-tabs-solid.nav-tabs-rounded {
+	border-radius: 50px;
+}
+.nav-tabs.nav-tabs-solid.nav-tabs-rounded > li > a {
+	border-radius: 50px;
+}
+.nav-tabs.nav-tabs-solid.nav-tabs-rounded > li > a.active,
+.nav-tabs.nav-tabs-solid.nav-tabs-rounded > li > a.active:hover,
+.nav-tabs.nav-tabs-solid.nav-tabs-rounded > li > a.active:focus {
+	border-radius: 50px;
+}
+.nav-tabs-justified > li > a {
+	border-radius: 0;
+	margin-bottom: 0;
+}
+.nav-tabs-justified > li > a:hover,
+.nav-tabs-justified > li > a:focus {
+	border-bottom-color: #ddd;
+}
+.nav-tabs-justified.nav-tabs-solid > li > a {
+	border-color: transparent;
+}
+.nav-tabs.nav-justified.nav-tabs-top {
+	border-bottom: 1px solid #ddd;
+}
+.nav-tabs.nav-justified.nav-tabs-top > li > a,
+.nav-tabs.nav-justified.nav-tabs-top > li > a:hover,
+.nav-tabs.nav-justified.nav-tabs-top > li > a:focus {
+	border-width: 2px 0 0 0;
+}
+.nav-tabs.nav-tabs-top > li {
+	margin-bottom: 0;
+}
+.nav-tabs.nav-tabs-top > li > a,
+.nav-tabs.nav-tabs-top > li > a:hover,
+.nav-tabs.nav-tabs-top > li > a:focus {
+	border-width: 2px 0 0 0;
+}
+.nav-tabs.nav-tabs-top > li.open > a,
+.nav-tabs.nav-tabs-top > li > a:hover,
+.nav-tabs.nav-tabs-top > li > a:focus {
+	border-top-color: #ddd;
+}
+.nav-tabs.nav-tabs-top > li+li > a {
+	margin-left: 1px;
+}
+.nav-tabs.nav-tabs-top > li > a.active,
+.nav-tabs.nav-tabs-top > li > a.active:hover,
+.nav-tabs.nav-tabs-top > li > a.active:focus {
+	border-top-color: #20c0f3;
+}
+.nav-tabs.nav-tabs-bottom > li > a.active, 
+.nav-tabs.nav-tabs-bottom > li > a.active:hover, 
+.nav-tabs.nav-tabs-bottom > li > a.active:focus {
+	border-bottom-width: 2px;
+	border-color: transparent;
+	border-bottom-color: #20c0f3;
+	background-color: transparent;
+	transition: none 0s ease 0s; 
+	-moz-transition: none 0s ease 0s; 
+	-o-transition: none 0s ease 0s; 
+	-ms-transition: none 0s ease 0s; 
+	-webkit-transition: none 0s ease 0s;
+}
+.nav-tabs.nav-tabs-solid {
+	background-color: #fafafa;
+	border: 0;
+}
+.nav-tabs.nav-tabs-solid > li {
+	margin-bottom: 0;
+}
+.nav-tabs.nav-tabs-solid > li > a {
+	border-color: transparent;
+}
+.nav-tabs.nav-tabs-solid > li > a:hover,
+.nav-tabs.nav-tabs-solid > li > a:focus {
+	background-color: #f5f5f5;
+}
+.nav-tabs.nav-tabs-solid > .open:not(.active) > a {
+	background-color: #f5f5f5;
+	border-color: transparent;
+}
+.nav-tabs-justified.nav-tabs-top {
+	border-bottom: 1px solid #ddd;
+}
+.nav-tabs-justified.nav-tabs-top > li > a,
+.nav-tabs-justified.nav-tabs-top > li > a:hover,
+.nav-tabs-justified.nav-tabs-top > li > a:focus {
+	border-width: 2px 0 0 0;
+}
+.doctor-widget {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.doc-info-left {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.doc-info-right {
+    margin-left: auto;
+    -ms-flex: 0 0 200px;
+    flex: 0 0 200px;
+    max-width: 200px;
+}
+.doc-speciality {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.doc-info-cont .p{
+    margin-top: 50px;
+}
+
+.doc-info-cont{
+    margin-left:150px
+}
+
+.apt-btn{
+    color: #f0f0f0;
+    text-decoration: none;
+
+}
+
+.features-slider .slick-dots, .features-img img {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.features-slider .slick-slide {
+	margin-right: 62px;
+}
+.features-slider .slick-center {
+    opacity: 1;
+    transform: scale(1.20);
+}
+.features-slider .slick-list {
+    padding: 16px 50px !important
+}
+.features-slider .slick-dots {
+    margin-top: 44px;
+    position: unset;
+}
+
+.features-slider .slick-dots, .features-img img {
+    text-align: center;
+    margin: 0 auto;
+}

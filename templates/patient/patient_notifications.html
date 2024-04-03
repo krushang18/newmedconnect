@@ -1,0 +1,16 @@
+{%extends 'patient/myaccount_base.html'%}
+{%block main%}
+            {%for n in notification%}
+            <div class="card col-xl-8" style="height:fit-content;">
+               {{n.message}}
+            </div> 
+            {%endfor%}
+            <center> 
+                <form method="post">
+                    {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-lg mt-3">
+                    <i class="fa fa-trash"></i>  Delete All</button>
+                </form>
+            </center>
+
+{% endblock %}

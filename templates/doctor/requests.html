@@ -1,0 +1,100 @@
+{% extends "basic_structure.html"%} 
+{%block start%} 
+<div class="container mt-1">
+  <div class="d-flex justify-content-center pt-5 p-1">
+    <h2>Received Request </h2>
+  </div>
+</div>
+<hr>
+<!-- <div class="container mt-5">
+  <h2>Appointment Requests</h2>
+  <div class="card mt-3">
+    <div class="card-body">
+      <h5 class="card-title">Patient: {{ i.patient_name}}</h5>
+      <p class="card-text">Date/Time: {{ i.datetime}}</p>
+
+        <hr />
+        <a href="/doctor/requestresp/{{i.id}}/" class="btn btn-primary">Responsed</a>
+
+    </div>
+  </div>
+</div> -->
+{% if disp%}
+
+{% else %}
+    <div class="container mt-1">
+      <div class="d-flex justify-content-center pt-5 p-1">
+        <h4>No Received Request </h4>
+      </div>
+    </div>
+    {%endif%}
+<div class="container mt-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for i in disp %}
+
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+            <div class="mb-3">
+              <label for="patientName" class="form-label">Patient Name:</label>
+              <input type="text" class="form-control" id="patientName" rows="1" placeholder="{{ i.patient_name}}" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="date" class="form-label">Date/Time:</label>
+              <input  type="text" class="form-control" id="date" rows="1" placeholder="{{ i.datetime | date:"d-m-Y H:i"}}"></input>
+            </div>
+            <div class="mb-3">
+              <label for="discription" class="form-label">Illness Discription:</label>
+              <input  type="text" class="form-control" id="discription" rows="1" placeholder="{{ i.note}}"></input>
+            </div>
+
+            <div class="card-footer bg-white">
+              <div class="d-flex justify-content-between ">
+                <a type="submit" href="/doctor/requestresp/{{i.id}}/" class="btn btn-outline-primary">Accept</a>
+
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Reject</button>
+              </div>
+            </div>
+
+
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="deleteModalLabel">Reject Request</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form method="post">
+                          {% csrf_token %}
+                          <div class="mb-3">
+                            <label for="reason" class="form-label">Reason</label>
+                            <!-- <input type="text" id="hiddenTextbox" style="display: none; color: white;" >{{i.id}}</input> -->
+                            <input type="text" id="hiddenTextbox" value="{{i.id}}" name="reasonid" style="display: none;">
+
+                            <input type="text" class="form-control" required id="reason" name="reason" required>
+                          </div>
+                          <button type="submit" class="btn btn-outline-danger">Reject</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+{% endfor %} 
+
+</div>
+</div>
+
+
+
+
+
+{%endblock%}

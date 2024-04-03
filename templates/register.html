@@ -1,0 +1,83 @@
+{% extends "log_reg_base.html"%}
+
+{% block start%}
+
+<div class="container mt-5">
+    <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h4>Register</h4><hr>
+
+        {% if messages %}
+        <div class="alert alert-primary" role="alert">
+        {% for message in messages %}
+                {{ message }}              
+                {% endfor %}
+            </div>
+        {% endif %}
+
+
+        <div class="mb-3">
+            <label for="first_name" class="form-label">First name</label>
+            <input type="text" class="form-control" required id="first_name" name="first_name">
+          </div>
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Last name</label>
+            <input type="text" class="form-control" required id="last_name" name="last_name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" required id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="phoneno" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" required id="phoneno" name="phoneno">
+          </div>
+
+          <div class="mb-3">
+            <label for="street" class="form-label">street</label>
+            <input type="text" class="form-control" required id="street" name="street">
+          </div>
+          <div class="mb-3">
+            <label for="city" class="form-label">city</label>
+            <input type="text" class="form-control" required id="city" name="city">
+          </div>
+          <div class="mb-3">
+            <label for="state" class="form-label">state</label>
+            <input type="text" class="form-control" required id="state" name="state">
+          </div>
+
+          <div class="mb-3">
+            <label for="qualification" class="form-label">qualification</label>
+            <input type="text" class="form-control" required id="qualification" name="qualification">
+          </div>
+          <div class="mb-3">
+            <label for="specialization" class="form-label">specialization</label>
+            <input type="text" class="form-control" required id="specialization" name="specialization">
+          </div>
+          <div class="mb-3">
+            <label for="certificate_no" class="form-label">certificate No.</label>
+            <input type="text" class="form-control" required id="certificate_no" name="certificate_no">
+          </div>
+          <div class="mb-3">
+            <label for="fees" class="form-label">fees</label>
+            <input type="text" class="form-control" required id="fees" name="fees">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Profile Picture</label>
+            <input type="file" class="form-control" name="profile">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" required name="password" id="password">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" name="confirm_password">
+          </div>
+          <p>Alreagy have account? <a href="/login/">Login</a><br>
+        <button type="submit" class="btn btn-success">Register</button><br><rr>
+      </form>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'patient/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<ul class="breadcrumb">
+    <li><a href="/patient/">Home</a></li>
+    <li><a href="/patient/doctors/">Doctors</a></li>
+    <li>Doctor name</li>
+</ul>
+
+<div class="content">
+    <div class="container">
+
+        <!-- Doctor Widget -->
+        <div class="card" style="width:fill-content;">
+            <div class="card-body">
+                <div class="doctor-widget">
+                    <div class="doc-info-left">
+                        <div class="doctor-img">
+                            <img src="/media/{{doc.profile_img}}" class="img-fluid" alt="User Image">
+                        </div>
+                        <div class="doc-info-cont">
+                            <h1 class="doc-name">Dr. {{doc.user.first_name}} {{doc.user.last_name}}</h1>
+                            <h5><p>Specialization in:  {{doc.specialization}}</p>
+                            <p>Qualifications are:  {{doc.qualification}}</p>
+                            <p>Contact Number:  {{doc.user.phone_number}}</p>
+                            <p>Email Address:  {{doc.user.email}}</p>
+                            <p>Fees:  {{doc.fees}}</p>
+                            <div class="clinic-details">
+                                <p class="doc-location"><i class="fas fa-map-marker-alt"></i> {{doc.doctor_addr.city}}, {{doc.doctor_addr.state}}</p>
+                            </div></h5>
+                            <button class="btn btn-primary"><a class="apt-btn" href="/patient/appointment/{{doc.user_id}}/">Book Appointment</a></button>
+                        </div>
+                    </div>        
+            </div>
+        </div>
+    </div>
+        <!-- /Doctor Widget -->
+
+{%endblock%}

@@ -1,0 +1,16 @@
+{%extends 'patient/myaccount_base.html'%}
+{%block main%}
+
+<form style="font-size:large; " class="col-6  p-3 " style="height:fit-content;"  method="post" enctype="multipart/form-data">
+    {% csrf_token %}  
+    
+   <center><b> Are you sure you want to delete your account?</b></center>
+    <div class="row">
+    <center style="margin:10px;"> 
+        <button type="submit" style="margin-right:10px;" class="btn btn-danger btn-lg mt-3">Yes</button>
+      <button type="submit" style="margin-left:10px;" class="btn btn-success btn-lg mt-3">No</button>
+    </center>
+  </div>
+</form>
+
+{%endblock%}

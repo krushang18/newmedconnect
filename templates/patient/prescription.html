@@ -1,0 +1,79 @@
+{%extends 'patient/myaccount_base.html'%}
+{%block main%}
+      
+      <div class="col-md-7 col-lg-8 col-xl-9">
+        <div class="card">
+          <div class="card-body pt-0">
+          
+            <!-- Tab Menu -->
+            <nav class="user-tabs mb-4">
+              <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
+                <li class="nav-item">
+                  <a class="nav-link" href="/patient/myaccount/" data-toggle="tab">Appointments</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link  active" href="/patient/prescription/" data-toggle="tab">Prescriptions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/patient/bills/" data-toggle="tab">Billing</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- /Tab Menu -->
+            
+            <!-- Tab Content -->
+            <div class="tab-content pt-0">
+              
+			<!-- Prescription Tab -->
+            <div class="tab-pane fade show active" id="pres">
+				<div class="card card-table mb-0">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-hover table-center mb-0">
+								<thead>
+									<tr>								
+										<th>Created by </th>
+										<th></th>
+									</tr>     
+								</thead>
+								<tbody>
+									{%for p in presc%}
+									<tr>
+											<td>
+												<h2 class="table-avatar">
+													<a href="doctor-profile.html" class="avatar avatar-sm mr-2">
+														<img class="" src="/media/{{p.appointment_id.doctor_id.profile_img}}" alt="User Image">
+													</a>
+													<a href="doctor-profile.html">Dr. {{p.appointment_id.doctor_id.user.first_name}}  {{p.appointment_id.doctor_id.user.last_name}}<span></span></a>
+												</h2>
+											</td>
+											<td class="text-right">
+												<div class="table-action">
+													<a href="/patient/view-prescription/{{p.id}}" class="btn btn-sm bg-info-light">
+														<i class="far fa-eye"></i> View
+													</a>
+												</div>
+											</td>
+										</tr>
+										{%endfor%}
+									</tbody>	
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Prescription Tab -->
+            </div>
+            <!-- Tab Content -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>		
+<!-- /Page Content -->
+
+{% endblock  %}
